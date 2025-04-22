@@ -1,34 +1,47 @@
-import React from 'react'
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function Login() {
-  const navigate =useNavigate();
- 
-  const handleLogin=(e)=>{
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
     e.preventDefault();
- 
-    
-      
     navigate("/home");
+  };
 
-  }
   return (
-    <>
-    <div style={{display:'flex',justifyContent:'center'}}>
-    <div className='login-container'>
-      <h1 style={{color:'blue'}}>Login</h1>
-      <form onSubmit={handleLogin}>
-        <label> Email </label>
-        <input type='email' placeholder='email' required />
-        <label> Password </label>
-        <input type='password' placeholder='password' required/>
-        <button style={{backgroundColor:'blue',color:'white',margin:'20px'}} type='submit'>Login</button>
-      </form>
-
+    <div className="flex justify-center items-center min-h-screen bg-gray-100">
+      <div className="bg-white w-full max-w-sm p-6 rounded-2xl shadow-lg">
+        <h1 className="text-3xl font-bold text-blue-600 text-center mb-6">Login</h1>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <div>
+            <label className="block text-sm font-medium mb-1">Email</label>
+            <input
+              type="email"
+              placeholder="Email"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-medium mb-1">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+          >
+            Login
+          </button>
+        </form>
+      </div>
     </div>
-    </div>
-    </>
-  )
+  );
 }
 
 export default Login;
